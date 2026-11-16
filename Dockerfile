@@ -1,5 +1,5 @@
 # Production Dockerfile for QUANTUM-SAFE Secure Communication System
-FROM node:20-alpine
+FROM node:22-alpine
 
 # Set working directory
 WORKDIR /app
