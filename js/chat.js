@@ -115,23 +115,17 @@ window.QS_CHAT = {
     if (contacts.length === 0) {
       container.innerHTML = `
         <div style="padding: 2.5rem 1.25rem; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
-          <div style="color: var(--accent-cyan); margin-bottom: 0.75rem;"><i data-lucide="shield" data-size="32"></i></div>
-          <p style="color: var(--text-white); font-weight: 600; margin-bottom: 0.35rem; font-size: 0.95rem;">No Other Peers Registered</p>
-          <p style="font-size: 0.8rem; line-height: 1.5; color: var(--text-secondary); margin-bottom: 1.25rem;">
-            Click <strong>Copy Invite Link</strong> above or open an Incognito tab at <strong class="text-cyan">#/register</strong> to create a 2nd user and chat in real time.
+          <div style="color: var(--accent-cyan); margin-bottom: 0.75rem;"><i data-lucide="shield-check" data-size="32"></i></div>
+          <p style="color: var(--text-white); font-weight: 600; margin-bottom: 0.35rem; font-size: 0.95rem;">Awaiting Peer Connections</p>
+          <p style="font-size: 0.8rem; line-height: 1.5; color: var(--text-secondary); margin-bottom: 0.5rem;">
+            Click <strong class="text-cyan">Copy Invite Link for Friend</strong> above to invite your friend.
           </p>
-          <button id="btn-provision-peer" class="btn btn-secondary btn-sm w-full" style="justify-content: center; border-color: rgba(0, 217, 255, 0.4);">
-            <i data-lucide="user-plus" data-size="14" class="text-cyan"></i>
-            <span>Provision Test Peer (Dr. Elena)</span>
-          </button>
+          <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;">
+            As soon as they register, their ML-KEM-768 channel will appear here instantly.
+          </p>
         </div>
       `;
       if (window.lucide) window.lucide.createIcons(container);
-
-      const provisionBtn = document.getElementById('btn-provision-peer');
-      if (provisionBtn) {
-        provisionBtn.addEventListener('click', () => this.provisionTestPeer());
-      }
       return;
     }
 
@@ -402,53 +396,6 @@ window.QS_CHAT = {
     } finally {
       this.isSending = false;
       if (sendBtn) sendBtn.disabled = false;
-    }
-  },
-
-  provisionTestPeer: async function () {
-    const btn = document.getElementById('btn-provision-peer');
-    if (btn) {
-      btn.disabled = true;
-      btn.innerHTML = '<i data-lucide="refresh-cw" class="animate-spin" data-size="14"></i> Provisioning ML-KEM Identity...';
-      if (window.lucide) window.lucide.createIcons(btn);
-    }
-
-    try {
-      const res = await window.QS_API.provisionDemoPeer();
-
-      if (res.success && res.user) {
-        window.QS_APP.showToast({
-          title: 'Peer Provisioned on MongoDB',
-          message: `${res.user.name} registered with ML-KEM-768 keypair. 1-to-1 channel active!`,
-          type: 'success'
-        });
-
-        // Refresh peers list
-        await this.fetchRealPeers();
-        this.renderContactsList();
-        if (window.QS_DATA.contacts.length > 0) {
-          await this.selectContact(window.QS_DATA.contacts[0].id);
-        }
-      } else {
-        window.QS_APP.showToast({
-          title: 'Provisioning Notice',
-          message: res.error || 'Could not provision test peer.',
-          type: 'warning'
-        });
-      }
-    } catch (e) {
-      console.warn('Provision error:', e);
-      window.QS_APP.showToast({
-        title: 'Provisioning Notice',
-        message: 'Could not automatically provision test peer. Please register in incognito window.',
-        type: 'warning'
-      });
-    } finally {
-      if (btn) {
-        btn.disabled = false;
-        btn.innerHTML = '<i data-lucide="user-plus" data-size="14"></i> Provision Test Peer';
-        if (window.lucide) window.lucide.createIcons(btn);
-      }
     }
   },
 
