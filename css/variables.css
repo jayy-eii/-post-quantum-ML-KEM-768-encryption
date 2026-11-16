@@ -1,0 +1,84 @@
+/**
+ * QUANTUM-SAFE CSS Design System: Variables & Tokens
+ */
+
+:root {
+  /* Core Background Colors */
+  --bg-primary: #07111F;
+  --bg-secondary: #0D1B2A;
+  --bg-tertiary: #112438;
+  --bg-card: #112438;
+  --bg-card-hover: #162E48;
+  --bg-glass: rgba(17, 36, 56, 0.72);
+  --bg-glass-strong: rgba(13, 27, 42, 0.88);
+  --bg-input: #0A1828;
+  --bg-sidebar: #091524;
+  --bg-header: #07111F;
+
+  /* Accent Colors */
+  --accent-cyan: #00D9FF;
+  --accent-cyan-rgb: 0, 217, 255;
+  --accent-cyan-hover: #33E1FF;
+  --accent-cyan-subtle: rgba(0, 217, 255, 0.12);
+  --accent-cyan-glow: rgba(0, 217, 255, 0.28);
+
+  --accent-teal: #00E5B0;
+  --accent-teal-rgb: 0, 229, 176;
+  --accent-teal-hover: #33EBBE;
+  --accent-teal-subtle: rgba(0, 229, 176, 0.12);
+
+  --accent-purple: #A78BFA;
+  --accent-danger: #EF4444;
+  --accent-danger-subtle: rgba(239, 68, 68, 0.15);
+  --accent-warning: #F59E0B;
+  --accent-warning-subtle: rgba(245, 158, 11, 0.15);
+  --accent-success: #10B981;
+
+  /* Text & Typography */
+  --text-white: #FFFFFF;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-dim: #475569;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(0, 217, 255, 0.24);
+  --border-accent-strong: rgba(0, 217, 255, 0.5);
+  --border-teal: rgba(0, 229, 176, 0.24);
+
+  /* Shadows & Glows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 40px -15px rgba(0, 0, 0, 0.65);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --shadow-card-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 217, 255, 0.35), 0 0 24px rgba(0, 217, 255, 0.12);
+  --glow-cyan: 0 0 24px rgba(0, 217, 255, 0.18);
+  --glow-cyan-strong: 0 0 35px rgba(0, 217, 255, 0.35);
+  --glow-teal: 0 0 24px rgba(0, 229, 176, 0.18);
+  --specular-line: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12) 30%, rgba(0, 217, 255, 0.4) 50%, rgba(255, 255, 255, 0.12) 70%, transparent);
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Font Families */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Roboto Mono', Menlo, Consolas, monospace;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout dimensions */
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 80px;
+  --header-height: 72px;
+}

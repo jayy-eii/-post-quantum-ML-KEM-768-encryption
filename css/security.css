@@ -1,0 +1,262 @@
+/**
+ * QUANTUM-SAFE Security Dashboard CSS
+ * Post-Quantum Cryptography (ML-KEM-768) & AES-256-GCM visual workflows and status.
+ */
+
+.security-header-banner {
+  background: linear-gradient(135deg, rgba(13, 27, 42, 0.95) 0%, rgba(17, 36, 56, 0.85) 100%);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.security-core-status {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.crypto-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: rgba(0, 229, 176, 0.1);
+  color: var(--accent-teal);
+  border: 1px solid rgba(0, 229, 176, 0.3);
+}
+
+/* Crypto Algorithm Status Cards */
+.crypto-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.crypto-spec-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.crypto-spec-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 8px 24px rgba(0, 217, 255, 0.08);
+}
+
+.crypto-spec-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.crypto-title-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.crypto-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crypto-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 1rem;
+}
+
+.crypto-spec-table tr {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.crypto-spec-table tr:last-child {
+  border-bottom: none;
+}
+
+.crypto-spec-table td {
+  padding: 0.65rem 0;
+  color: var(--text-secondary);
+}
+
+.crypto-spec-table td:last-child {
+  text-align: right;
+  font-family: var(--font-mono);
+  color: var(--text-white);
+  font-weight: 500;
+}
+
+/* Interactive Visual Workflow Pipeline: Sender -> ML-KEM -> Shared Secret -> AES-256-GCM -> Receiver */
+.pipeline-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-xl);
+}
+
+.pipeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pipeline-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.pipeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 130px;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.pipeline-node:hover {
+  transform: translateY(-3px);
+}
+
+.pipeline-node-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  transition: all var(--transition-fast);
+  color: var(--text-secondary);
+}
+
+.pipeline-node.active .pipeline-node-icon {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 217, 255, 0.15);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+}
+
+.pipeline-node.completed .pipeline-node-icon {
+  border-color: var(--accent-teal);
+  background: rgba(0, 229, 176, 0.15);
+  color: var(--accent-teal);
+}
+
+.pipeline-node-name {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 0.2rem;
+}
+
+.pipeline-node-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.pipeline-connector {
+  flex: 1;
+  height: 2px;
+  background: var(--border-medium);
+  min-width: 40px;
+  position: relative;
+}
+
+.pipeline-connector.active {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-teal));
+  box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+/* Step Detail Box */
+.step-detail-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+}
+
+.step-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.step-math-box {
+  background: #050E18;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+/* Integrity & Ephemeral Key Sandbox */
+.security-interactive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.key-fingerprint-box {
+  background: var(--bg-input);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-teal);
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .crypto-cards-grid,
+  .security-interactive-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "quantum-safe-system",
+  "version": "1.0.0",
+  "description": "Quantum-Safe Secure Communication System",
+  "private": true,
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node server/test-auth-memory.js"
+  },
+  "dependencies": {
+    "@noble/post-quantum": "^0.7.1",
+    "dotenv": "^18.0.10",
+    "mongoose": "^9.12.1",
+    "ws": "^8.23.0"
+  }
+}

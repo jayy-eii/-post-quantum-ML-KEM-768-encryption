@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUANTUM-SAFE | Post-Quantum Secure Communication System</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Optional Web Fonts (Inter & JetBrains Mono with Instant System Fallback) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Core Design System Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/chat.css">
+  <link rel="stylesheet" href="css/security.css">
+  <link rel="stylesheet" href="css/files.css">
+  <link rel="stylesheet" href="css/logs.css">
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+
+  <!-- ========================================================================= -->
+  <!-- 1. LANDING PAGE VIEW (#view-landing) -->
+  <!-- ========================================================================= -->
+  <section id="view-landing" class="view-section active">
+    <!-- Landing Navigation -->
+    <header class="landing-nav">
+      <a href="#/landing" class="flex items-center gap-2">
+        <img src="assets/logo.svg" alt="Quantum-Safe Logo" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-title">QUANTUM-SAFE</span>
+          <span class="brand-subtitle">Secure Communication System</span>
+        </div>
+      </a>
+
+      <ul class="landing-nav-links">
+        <li><a href="#landing-features">Features</a></li>
+        <li><a href="#landing-how-it-works">How It Works</a></li>
+        <li><a href="#landing-tech-overview">Cryptographic Stack</a></li>
+        <li><a href="#landing-why-matters">Why Quantum-Safe</a></li>
+      </ul>
+
+      <div class="landing-nav-actions">
+        <a href="#/login" class="btn btn-secondary btn-sm">Sign In</a>
+        <a href="#/register" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-glow-bg"></div>
+      
+      <div class="hero-content">
+        <div class="hero-pill">
+          <i data-lucide="shield-check" data-size="16"></i>
+          <span>NIST FIPS 203 (ML-KEM) Post-Quantum Architecture</span>
+        </div>
+
+        <h1 class="hero-title">
+          Your Communication.<br>
+          <span class="gradient-text">Protected Beyond Tomorrow.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Next-generation cybersecurity platform safeguarding enterprise digital identities and real-time transit data against future quantum decryption threats using lattice-based cryptography and AES-256-GCM.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#/register" class="btn btn-primary btn-lg">
+            <span>Get Started</span>
+            <i data-lucide="arrow-right" data-size="18"></i>
+          </a>
+          <a href="#/security" id="hero-explore-btn" class="btn btn-secondary btn-lg">
+            <i data-lucide="cpu" data-size="18"></i>
+            <span>Explore Security</span>
+          </a>
+          <a href="#/dashboard" class="btn btn-outline-cyan btn-lg">
+            <i data-lucide="activity" data-size="18"></i>
+            <span>Open Security Console</span>
+          </a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <i data-lucide="lock" data-size="18" class="text-cyan"></i>
+            <span>ML-KEM-768 Lattice KEM</span>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="shield" data-size="18" class="text-teal"></i>
+            <span>AES-256-GCM AEAD</span>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="sparkles" data-size="18" class="text-purple"></i>
+            <span>Forward Secrecy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cyber Visual Right -->
+      <div class="hero-visual-wrap">
+        <div class="quantum-orb-container">
+          <canvas id="quantum-lattice-canvas" width="420" height="420"></canvas>
+          <div class="quantum-ring ring-1"></div>
+          <div class="quantum-ring ring-2"></div>
+          <div class="quantum-ring ring-3"></div>
+          
+          <div class="quantum-center-core">
+            <img src="assets/logo.svg" alt="Core Shield" style="width: 58px; height: 58px; filter: drop-shadow(0 0 10px #00D9FF);">
+          </div>
+
+          <!-- Floating Info Cards -->
+          <div class="quantum-floating-card floating-card-1">
+            <div style="background: rgba(0, 217, 255, 0.15); padding: 8px; border-radius: 8px; color: var(--accent-cyan);">
+              <i data-lucide="cpu" data-size="18"></i>
+            </div>
+            <div>
+              <div class="floating-card-title">Lattice Dimension</div>
+              <div class="floating-card-val">k = 3 • q = 3329 (FIPS 203)</div>
+            </div>
+          </div>
+
+          <div class="quantum-floating-card floating-card-2">
+            <div style="background: rgba(0, 229, 176, 0.15); padding: 8px; border-radius: 8px; color: var(--accent-teal);">
+              <i data-lucide="shield-check" data-size="18"></i>
+            </div>
+            <div>
+              <div class="floating-card-title">Transit Encryption</div>
+              <div class="floating-card-val">AES-256-GCM 128-bit GHASH</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section id="landing-features" class="section-wrapper">
+      <div class="section-header-center">
+        <span class="section-tag">Enterprise Defense Features</span>
+        <h2 class="section-title">Engineered for the Post-Quantum Era</h2>
+        <p class="section-desc">
+          Current RSA and Elliptic Curve systems will collapse when cryptanalytically relevant quantum computers arrive. QUANTUM-SAFE implements NIST-standardized lattice defenses today.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <i data-lucide="cpu" data-size="24"></i>
+          </div>
+          <h3 class="feature-title">ML-KEM Key Encapsulation</h3>
+          <p class="feature-text">
+            Standardized in NIST FIPS 203. Based on the hardness of Module Learning with Errors (M-LWE) over module lattices, impervious to Shor's and Grover's quantum algorithms.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="color: var(--accent-teal); background: rgba(0, 229, 176, 0.1); border-color: rgba(0, 229, 176, 0.25);">
+            <i data-lucide="shield" data-size="24"></i>
+          </div>
+          <h3 class="feature-title">AES-256-GCM Payload Shield</h3>
+          <p class="feature-text">
+            Authenticated Encryption with Associated Data (AEAD) ensures both confidentiality and cryptographic integrity with high-throughput hardware Galois/Counter acceleration.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="color: var(--accent-purple); background: rgba(167, 139, 250, 0.1); border-color: rgba(167, 139, 250, 0.25);">
+            <i data-lucide="sparkles" data-size="24"></i>
+          </div>
+          <h3 class="feature-title">Ephemeral Forward Secrecy</h3>
+          <p class="feature-text">
+            Every secure session and message thread negotiates a unique, non-reusable ephemeral keypair that is automatically shredded from volatile memory upon session termination.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <i data-lucide="activity" data-size="24"></i>
+          </div>
+          <h3 class="feature-title">Tamper-Evident Audit Trail</h3>
+          <p class="feature-text">
+            Complete cryptographic event logging with real-time handshake telemetry, key rotation auditing, and anomalous legacy downgrade prevention.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="landing-how-it-works" class="section-wrapper" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="section-header-center">
+        <span class="section-tag">Interactive Architecture</span>
+        <h2 class="section-title">How Quantum-Safe Communication Works</h2>
+        <p class="section-desc">
+          A seamless hybrid protocol combining post-quantum key encapsulation with ultra-fast symmetric stream encryption.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <div class="card card-glass">
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 1rem; opacity: 0.6;">01</div>
+          <h3 style="margin-bottom: 0.6rem;">Ephemeral Lattice Key Generation</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            The sender initializes true quantum entropy to sample high-dimensional lattice polynomial vectors, generating an ML-KEM-768 public key (1,184 Bytes).
+          </p>
+        </div>
+
+        <div class="card card-glass">
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-teal); margin-bottom: 1rem; opacity: 0.6;">02</div>
+          <h3 style="margin-bottom: 0.6rem;">Zero-Knowledge Encapsulation</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            The recipient encapsulates a 256-bit secret using the sender's lattice public key. Both parties independently compute an identical shared secret via HKDF-SHA3.
+          </p>
+        </div>
+
+        <div class="card card-glass">
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-purple); margin-bottom: 1rem; opacity: 0.6;">03</div>
+          <h3 style="margin-bottom: 0.6rem;">Authenticated AES-256-GCM Transit</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Messages and files are encrypted with the derived symmetric key and a unique 96-bit nonce. A 128-bit GHASH authentication tag prevents unauthorized bit manipulation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Overview (ML-KEM & AES-256-GCM) -->
+    <section id="landing-tech-overview" class="section-wrapper">
+      <div class="section-header-center">
+        <span class="section-tag">Cryptographic Standards</span>
+        <h2 class="section-title">NIST FIPS 203 & AES-256-GCM Standards</h2>
+        <p class="section-desc">
+          Quantum-Safe is built from the ground up on finalized post-quantum mathematical standards.
+        </p>
+      </div>
+
+      <div class="tech-split-grid">
+        <div class="tech-card">
+          <div class="tech-badge-row">
+            <span class="badge badge-cyan">NIST FIPS 203 Final Standard</span>
+            <span class="badge badge-teal">Security Category 3 & 5</span>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">ML-KEM (Module Lattice KEM)</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">
+            Formerly known as CRYSTALS-Kyber, ML-KEM is the worldwide post-quantum standard for public-key encryption and key establishment. Its hardness stems from the shortest vector problem on structured lattices.
+          </p>
+          <ul class="tech-spec-list">
+            <li class="tech-spec-item">
+              <i data-lucide="check" data-size="16"></i>
+              <span><strong>Lattice Parameters:</strong> Matrix dimension k=3, Ring modulus q=3329</span>
+            </li>
+            <li class="tech-spec-item">
+              <i data-lucide="check" data-size="16"></i>
+              <span><strong>Key Sizes:</strong> Public Key 1,184 Bytes • Ciphertext 1,088 Bytes</span>
+            </li>
+            <li class="tech-spec-item">
+              <i data-lucide="check" data-size="16"></i>
+              <span><strong>Quantum Hardness:</strong> Immune to Shor's Polynomial Quantum Factoring</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-badge-row">
+            <span class="badge badge-teal">NIST SP 800-38D</span>
+            <span class="badge badge-cyan">Authenticated AEAD</span>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">AES-256-GCM (Galois/Counter Mode)</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">
+            The global gold standard for symmetric encryption. With a 256-bit key length, Grover's quantum search algorithm only reduces the effective security margin to 128 bits—still cryptographically impenetrable for millennia.
+          </p>
+          <ul class="tech-spec-list">
+            <li class="tech-spec-item">
+              <i data-lucide="check" data-size="16"></i>
+              <span><strong>Quantum Resilience:</strong> 256-bit key yields 128-bit quantum security floor</span>
+            </li>
+            <li class="tech-spec-item">
+              <i data-lucide="check" data-size="16"></i>
+              <span><strong>Integrity Assurance:</strong> 128-bit GHASH authentication tag for each message</span>
+            </li>
+            <li class="tech-spec-item">
+              <i data-lucide="check" data-size="16"></i>
+              <span><strong>High Performance:</strong> Multi-gigabit throughput with AES-NI hardware vector extensions</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Quantum-Safe Security Matters -->
+    <section id="landing-why-matters" class="section-wrapper">
+      <div class="why-matters-container">
+        <div>
+          <span class="section-tag">Threat Horizon</span>
+          <h2 style="font-size: 2rem; margin-bottom: 1.25rem;">Why Quantum-Safe Security Matters Right Now</h2>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+            Adversary intelligence agencies and cyber cartels are actively executing <strong>"Store Now, Decrypt Later" (SNDL)</strong> attacks—intercepting and storing petabytes of encrypted government, financial, and enterprise data today, waiting for quantum computers to retroactively crack standard RSA and ECC keys tomorrow.
+          </p>
+          <div class="hero-pill" style="margin-bottom: 0;">
+            <i data-lucide="shield-check" data-size="14"></i>
+            <span>NIST FIPS 203 Validated • Quantum Invariant Defense</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="comparison-box danger-edge">
+            <div class="comparison-title" style="color: var(--accent-danger);">Classical Encryption (RSA-2048 / ECC-256)</div>
+            <p class="comparison-desc">
+              Vulnerable to Shor's algorithm. When a 4,000+ qubit quantum processor operates, mathematical discrete logarithms and prime factorization collapse in polynomial time O(n³).
+            </p>
+          </div>
+
+          <div class="comparison-box safe-edge">
+            <div class="comparison-title" style="color: var(--accent-teal);">Quantum-Safe (ML-KEM-768 + AES-256-GCM)</div>
+            <p class="comparison-desc">
+              Lattice geometry contains no periodic algebraic subgroups for Shor's algorithm to exploit. Stored ciphertexts remain mathematically irreversible even against quantum computers.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="cta-banner">
+        <h2>Ready to Quantum-Proof Your Enterprise?</h2>
+        <p>Deploy end-to-end post-quantum key encapsulation, secure team messaging, encrypted file vaults, and real-time audit telemetry.</p>
+        <div class="flex items-center justify-center gap-4">
+          <a href="#/register" class="btn btn-primary btn-lg">Create Free Account</a>
+          <a href="#/dashboard" class="btn btn-secondary btn-lg">Explore Dashboard</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="flex items-center gap-2" style="margin-bottom: 1rem;">
+            <img src="assets/logo.svg" alt="Quantum-Safe" style="width: 32px; height: 32px;">
+            <span class="brand-title">QUANTUM-SAFE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
+            Secure Communication System engineered for digital identity protection and post-quantum cryptographic resilience.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="#/dashboard">Main Dashboard</a></li>
+            <li><a href="#/chat">Secure Messaging</a></li>
+            <li><a href="#/security">Security Engine</a></li>
+            <li><a href="#/files">Encrypted File Vault</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Cryptography</h4>
+          <ul class="footer-links">
+            <li><a href="#landing-tech-overview">ML-KEM-768 Specs</a></li>
+            <li><a href="#landing-tech-overview">AES-256-GCM Pipeline</a></li>
+            <li><a href="#/logs">Audit Log Trail</a></li>
+            <li><a href="#landing-why-matters">Quantum Threat Matrix</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul class="footer-links">
+            <li><a href="#/login">Sign In</a></li>
+            <li><a href="#/register">Register Keypair</a></li>
+            <li><a href="#/settings">System Preferences</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 QUANTUM-SAFE Systems Inc. All rights reserved. Post-Quantum Cryptography Enterprise Architecture.</div>
+        <div class="flex items-center gap-3">
+          <span class="badge badge-cyan">Enterprise Ready</span>
+          <span class="badge badge-teal">NIST FIPS 203 Compliant</span>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. LOGIN PAGE VIEW (#view-login) -->
+  <!-- ========================================================================= -->
+  <section id="view-login" class="view-section">
+    <div class="auth-page-container">
+      <a href="#/landing" class="auth-back-link">
+        <i data-lucide="chevron-left" data-size="16"></i>
+        <span>Back to Home</span>
+      </a>
+
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="auth-brand-icon">
+            <i data-lucide="shield" data-size="28" class="text-cyan"></i>
+          </div>
+          <h2 class="auth-title">Welcome Back</h2>
+          <p class="auth-subtitle">Authenticate to your Quantum-Safe identity vault</p>
+        </div>
+
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Encrypted Identity / Email</label>
+            <div class="input-icon-wrap">
+              <span class="input-icon"><i data-lucide="user" data-size="16"></i></span>
+              <input type="email" id="login-email" class="form-input" placeholder="name@company.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="login-password">Session Password</label>
+            <div class="input-icon-wrap has-right-icon">
+              <span class="input-icon"><i data-lucide="lock" data-size="16"></i></span>
+              <input type="password" id="login-password" class="form-input" placeholder="Enter session password" required autocomplete="current-password">
+              <span class="input-icon-right password-toggle-btn" data-target="login-password" title="Toggle visibility">
+                <i data-lucide="eye" data-size="18"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="auth-row-between">
+            <label class="checkbox-wrap">
+              <input type="checkbox" id="login-remember" checked>
+              <span>Keep session open</span>
+            </label>
+            <a href="#/login" onclick="window.QS_APP.showToast({title: 'Reset Notice', message: 'In production, password recovery involves ephemeral identity verification with your ML-KEM private seed.', type: 'info'}); return false;">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg w-full">
+            <i data-lucide="shield-check" data-size="18"></i>
+            <span>Authenticate with ML-KEM</span>
+          </button>
+
+          <div class="auth-footer-prompt">
+            <span>Don't have a quantum keypair yet?</span>
+            <a href="#/register">Create Account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. REGISTER PAGE VIEW (#view-register) -->
+  <!-- ========================================================================= -->
+  <section id="view-register" class="view-section">
+    <div class="auth-page-container">
+      <a href="#/landing" class="auth-back-link">
+        <i data-lucide="chevron-left" data-size="16"></i>
+        <span>Back to Home</span>
+      </a>
+
+      <div class="auth-card" style="max-width: 520px;">
+        <div class="auth-header">
+          <div class="auth-brand-icon">
+            <i data-lucide="cpu" data-size="28" class="text-teal"></i>
+          </div>
+          <h2 class="auth-title">Create Quantum Identity</h2>
+          <p class="auth-subtitle">Generate your post-quantum ML-KEM-768 public/private keypair</p>
+        </div>
+
+        <form id="register-form" class="auth-form">
+          <div class="form-group">
+            <label class="form-label" for="reg-name">Full Name & Credentials</label>
+            <div class="input-icon-wrap">
+              <span class="input-icon"><i data-lucide="user" data-size="16"></i></span>
+              <input type="text" id="reg-name" class="form-input" placeholder="e.g. Alex Vance" required autocomplete="name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-email">Work Email</label>
+            <div class="input-icon-wrap">
+              <span class="input-icon"><i data-lucide="shield" data-size="16"></i></span>
+              <input type="email" id="reg-email" class="form-input" placeholder="name@organization.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-password">Master Password</label>
+            <div class="input-icon-wrap has-right-icon">
+              <span class="input-icon"><i data-lucide="lock" data-size="16"></i></span>
+              <input type="password" id="reg-password" class="form-input" placeholder="Create a master password" required autocomplete="new-password">
+              <span class="input-icon-right password-toggle-btn" data-target="reg-password" title="Toggle visibility">
+                <i data-lucide="eye" data-size="18"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Password Strength Indicator -->
+          <div class="password-meter">
+            <div class="meter-bars">
+              <div id="meter-bar-1" class="meter-segment"></div>
+              <div id="meter-bar-2" class="meter-segment"></div>
+              <div id="meter-bar-3" class="meter-segment"></div>
+              <div id="meter-bar-4" class="meter-segment"></div>
+            </div>
+            <div class="meter-label-wrap">
+              <span style="color: var(--text-muted);">Entropy Strength:</span>
+              <span id="meter-strength-text" class="meter-text" style="color: var(--text-dim);">Empty</span>
+            </div>
+            <ul class="meter-criteria-list">
+              <li id="crit-length" class="criteria-item"><i data-lucide="check" data-size="12"></i> 8+ Characters</li>
+              <li id="crit-upper" class="criteria-item"><i data-lucide="check" data-size="12"></i> Mixed Case</li>
+              <li id="crit-number" class="criteria-item"><i data-lucide="check" data-size="12"></i> Numbers (0-9)</li>
+              <li id="crit-symbol" class="criteria-item"><i data-lucide="check" data-size="12"></i> Special Symbol</li>
+            </ul>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-confirm-password">Confirm Password</label>
+            <div class="input-icon-wrap has-right-icon">
+              <span class="input-icon"><i data-lucide="lock" data-size="16"></i></span>
+              <input type="password" id="reg-confirm-password" class="form-input" placeholder="Confirm your master password" required autocomplete="new-password">
+              <span class="input-icon-right password-toggle-btn" data-target="reg-confirm-password" title="Toggle visibility">
+                <i data-lucide="eye" data-size="18"></i>
+              </span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-teal btn-lg w-full" style="margin-top: 0.5rem;">
+            <i data-lucide="key" data-size="18"></i>
+            <span>Create Quantum-Safe Account</span>
+          </button>
+
+          <div class="auth-footer-prompt">
+            <span>Already have an account?</span>
+            <a href="#/login">Sign In</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- APP SHELL WRAPPER (Houses Sidebar, Topbar, and Views 4 through 9) -->
+  <!-- ========================================================================= -->
+  <div id="app-shell" style="display: none;">
+    <!-- Mobile Backdrop -->
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Left Sidebar -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="#/dashboard" class="flex items-center gap-2">
+          <img src="assets/logo.svg" alt="Quantum-Safe" class="brand-logo-img">
+          <div class="brand-text-wrap">
+            <span class="brand-title">QUANTUM-SAFE</span>
+            <span class="brand-subtitle">Secure System</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav-container">
+        <span class="sidebar-section-label">Core Operations</span>
+        <a href="#/dashboard" class="nav-item active" data-route="dashboard">
+          <i data-lucide="activity" data-size="18"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#/chat" class="nav-item" data-route="chat">
+          <i data-lucide="message-square" data-size="18"></i>
+          <span>Secure Chat</span>
+          <span class="badge badge-cyan" style="font-size: 0.65rem;">PQC</span>
+        </a>
+        <a href="#/security" class="nav-item" data-route="security">
+          <i data-lucide="cpu" data-size="18"></i>
+          <span>Security Engine</span>
+        </a>
+        <a href="#/files" class="nav-item" data-route="files">
+          <i data-lucide="folder" data-size="18"></i>
+          <span>File Vault</span>
+        </a>
+        <a href="#/logs" class="nav-item" data-route="logs">
+          <i data-lucide="file-text" data-size="18"></i>
+          <span>Audit Logs</span>
+        </a>
+
+        <span class="sidebar-section-label" style="margin-top: 1rem;">Identity & Policy</span>
+        <a href="#/settings" class="nav-item" data-route="settings">
+          <i data-lucide="settings" data-size="18"></i>
+          <span>Settings</span>
+        </a>
+        <a href="#/landing" class="nav-item" style="color: var(--text-muted);">
+          <i data-lucide="external-link" data-size="18"></i>
+          <span>Public Portal</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-status-card">
+          <div class="status-card-header">
+            <span class="sidebar-status-title">PQC Lattice Engine</span>
+            <span class="status-pulse-dot" title="Operational"></span>
+          </div>
+          <div class="sidebar-status-val">ML-KEM-768 Active</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.68rem; color: var(--text-muted); margin-top: 4px;">
+            <span>Forward Secrecy:</span>
+            <span class="text-teal">100% Ephemeral</span>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.85rem; padding: 0 0.25rem;">
+          <a href="#/landing" id="sidebar-logout-btn" class="flex items-center gap-2" style="font-size: 0.78rem; color: var(--accent-danger);">
+            <i data-lucide="log-out" data-size="14"></i>
+            <span>Purge & Exit</span>
+          </a>
+          <span class="badge badge-teal" style="font-size: 0.65rem; padding: 0.15rem 0.5rem;">Active</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- Top Navigation Bar -->
+      <header class="app-header">
+        <div class="header-left">
+          <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle navigation">
+            <i data-lucide="menu" data-size="20"></i>
+          </button>
+          <div class="page-title-wrap">
+            <h1 id="app-header-title">Main Dashboard</h1>
+            <span id="app-header-breadcrumb" class="page-breadcrumb">Overview</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Active Security Status Chip -->
+          <div id="header-crypto-pill" class="header-security-pill" title="Click for cryptographic specifications">
+            <span class="status-pulse-dot"></span>
+            <span>ML-KEM-768 / AES-256-GCM</span>
+            <i data-lucide="info" data-size="13"></i>
+          </div>
+
+          <!-- Notification Bell -->
+          <button class="header-icon-btn" onclick="window.QS_APP.showToast({title: 'Audit Alert', message: 'All active tunnels have successfully completed their 15-minute ephemeral rekey rotation.', type: 'info'});" aria-label="Notifications">
+            <i data-lucide="bell" data-size="18"></i>
+            <span class="notification-badge"></span>
+          </button>
+
+          <!-- User Profile Dropdown Badge -->
+          <a href="#/settings" class="user-profile-badge">
+            <div id="header-user-avatar" class="avatar-circle">--</div>
+            <div class="user-meta-header">
+              <span id="header-user-name" class="user-meta-name">Authenticating...</span>
+              <span id="header-user-role" class="user-meta-role">Secure Session</span>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Content Container -->
+      <div class="app-content-body">
+
+        <!-- ========================================================================= -->
+        <!-- 4. MAIN DASHBOARD VIEW (#view-dashboard) -->
+        <!-- ========================================================================= -->
+        <div id="view-dashboard" class="app-sub-view active">
+          <!-- Welcome Banner -->
+          <div class="dashboard-welcome-banner">
+            <div class="welcome-text-wrap">
+              <h2>Welcome back, <span id="dashboard-welcome-name">Agent</span></h2>
+              <div class="welcome-meta-row">
+                <span>Identity: <strong id="dashboard-welcome-org" class="text-white">Connecting...</strong></span>
+                <span>•</span>
+                <span>Session Posture: <strong class="text-teal">Optimal / Quantum Resilient</strong></span>
+                <span>•</span>
+                <span>NIST Standard: <strong class="text-cyan">FIPS 203 (ML-KEM)</strong></span>
+              </div>
+            </div>
+            <div class="welcome-quick-pills">
+              <span class="badge badge-teal">
+                <i data-lucide="shield-check" data-size="13"></i>
+                Zero Weak Fallbacks
+              </span>
+              <button class="btn btn-secondary btn-sm system-status-trigger">
+                <i data-lucide="shield-check" data-size="13"></i>
+                <span>Security Posture</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Metric Overview Cards -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title">Total Messages Protected</span>
+                <div class="metric-icon-box" style="background: rgba(0, 217, 255, 0.1); color: var(--accent-cyan);">
+                  <i data-lucide="message-square" data-size="20"></i>
+                </div>
+              </div>
+              <div class="metric-value-wrap">
+                <span id="stat-total-messages" class="metric-main-value">0</span>
+              </div>
+              <div class="metric-footer">
+                <span class="metric-trend trend-up">
+                  <i data-lucide="check" data-size="13"></i> 100% Encrypted
+                </span>
+                <span>AES-256-GCM AEAD</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title">Active Secure Sessions</span>
+                <div class="metric-icon-box" style="background: rgba(0, 229, 176, 0.1); color: var(--accent-teal);">
+                  <i data-lucide="activity" data-size="20"></i>
+                </div>
+              </div>
+              <div class="metric-value-wrap">
+                <span id="stat-active-sessions" class="metric-main-value">1</span>
+                <span class="metric-unit">channel</span>
+              </div>
+              <div class="metric-footer">
+                <span class="metric-trend trend-up">
+                  <i data-lucide="activity" data-size="13"></i> Authenticated Tunnel
+                </span>
+                <span>Active</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title">ML-KEM Handshake Speed</span>
+                <div class="metric-icon-box" style="background: rgba(167, 139, 250, 0.1); color: var(--accent-purple);">
+                  <i data-lucide="cpu" data-size="20"></i>
+                </div>
+              </div>
+              <div class="metric-value-wrap">
+                <span id="stat-handshake-speed" class="metric-main-value">&lt; 1 ms</span>
+              </div>
+              <div class="metric-footer">
+                <span class="text-teal">Sub-millisecond</span>
+                <span>1,184B public key</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title">Quantum Resistance Score</span>
+                <div class="metric-icon-box" style="background: rgba(0, 229, 176, 0.1); color: var(--accent-teal);">
+                  <i data-lucide="shield-check" data-size="20"></i>
+                </div>
+              </div>
+              <div class="metric-value-wrap">
+                <span id="stat-system-health" class="metric-main-value">Optimal</span>
+              </div>
+              <div class="metric-footer">
+                <span class="text-cyan">Category 3 Hardness</span>
+                <span>NIST FIPS 203 verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions Bar -->
+          <div class="quick-actions-bar">
+            <button id="action-new-chat" class="btn btn-primary">
+              <i data-lucide="message-square" data-size="16"></i>
+              <span>New Secure Chat</span>
+            </button>
+            <button id="action-share-file" class="btn btn-secondary">
+              <i data-lucide="upload-cloud" data-size="16"></i>
+              <span>Encrypt & Share File</span>
+            </button>
+            <button id="action-gen-key" class="btn btn-secondary">
+              <i data-lucide="key" data-size="16"></i>
+              <span>Generate Ephemeral Keypair</span>
+            </button>
+            <button id="action-view-logs" class="btn btn-secondary">
+              <i data-lucide="file-text" data-size="16"></i>
+              <span>View Audit Logs</span>
+            </button>
+          </div>
+
+          <!-- Analytics & Visualizations Grid -->
+          <div class="analytics-grid">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">
+                    <i data-lucide="activity" data-size="18" class="text-cyan"></i>
+                    Hourly Transit Traffic & Handshakes (24h)
+                  </h3>
+                  <div class="card-subtitle">Encrypted message packets processed through post-quantum tunnels</div>
+                </div>
+                <span class="badge badge-cyan">Live Telemetry</span>
+              </div>
+              <div class="chart-card-body">
+                <div class="chart-canvas-container">
+                  <canvas id="dashboard-traffic-chart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">
+                    <i data-lucide="cpu" data-size="18" class="text-teal"></i>
+                    Cipher Suite Distribution
+                  </h3>
+                  <div class="card-subtitle">Active protocol negotiation breakdown</div>
+                </div>
+              </div>
+              <div id="dashboard-algo-bars" class="algo-split-list">
+                <!-- Populated via dashboard.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity Section -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">
+                  <i data-lucide="file-text" data-size="18" class="text-cyan"></i>
+                  Recent Cryptographic Security Activity
+                </h3>
+                <div class="card-subtitle">Real-time tamper-evident cryptographic event log</div>
+              </div>
+              <a href="#/logs" class="btn btn-ghost btn-sm">
+                <span>View Full Log</span>
+                <i data-lucide="chevron-right" data-size="14"></i>
+              </a>
+            </div>
+            <div id="dashboard-recent-activity" class="activity-list">
+              <!-- Populated via dashboard.js -->
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 5. SECURE CHAT PAGE VIEW (#view-chat) -->
+        <!-- ========================================================================= -->
+        <div id="view-chat" class="app-sub-view">
+          <div class="chat-layout-container">
+            <!-- Left Contacts Sidebar -->
+            <div class="chat-contacts-pane">
+              <div class="contacts-header">
+                <div class="contacts-title-row">
+                  <span class="contacts-title">
+                    <i data-lucide="users" data-size="18" class="text-cyan"></i>
+                    Secure Channels
+                  </span>
+                  <div style="display: flex; align-items: center; gap: 5px;">
+                    <span id="chat-ws-status-badge" class="badge badge-teal" style="font-size: 0.62rem; display: flex; align-items: center; gap: 4px;" title="Real-Time Quantum Link">
+                      <span style="width:6px; height:6px; border-radius:50%; background:#00E5B0; display:inline-block;" class="animate-pulse"></span>
+                      <span>LIVE</span>
+                    </span>
+                    <button id="chat-refresh-peers-btn" class="btn btn-secondary btn-xs" title="Refresh peer list from MongoDB" style="padding: 2px 6px; font-size: 0.68rem; display: flex; align-items: center; gap: 4px;">
+                      <i data-lucide="refresh-cw" data-size="11"></i>
+                      <span>Sync</span>
+                    </button>
+                    <span id="chat-channels-count-badge" class="badge badge-teal" style="font-size: 0.65rem;">0 Peers</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 6px; margin-top: 6px;">
+                  <button id="chat-invite-btn" class="btn btn-secondary btn-xs w-full" style="justify-content: center; font-size: 0.72rem; padding: 4px 8px; border-color: rgba(0, 217, 255, 0.3); background: rgba(0, 217, 255, 0.05); color: var(--accent-cyan);">
+                    <i data-lucide="share-2" data-size="12"></i>
+                    <span>Copy Invite Link for Friend</span>
+                  </button>
+                </div>
+                <div class="contacts-search-wrap">
+                  <span class="contacts-search-icon"><i data-lucide="search" data-size="14"></i></span>
+                  <input type="text" id="chat-contacts-search" class="contacts-search-input" placeholder="Search verified contacts...">
+                </div>
+              </div>
+
+              <ul id="chat-contacts-list" class="contacts-list">
+                <!-- Contacts populated dynamically by chat.js -->
+              </ul>
+            </div>
+
+            <!-- Central Conversation Window -->
+            <div class="chat-conversation-pane">
+              <!-- Chat Header -->
+              <div class="chat-header">
+                <div class="chat-contact-meta">
+                  <div id="chat-active-avatar" class="contact-avatar" style="border-color: rgba(0, 217, 255, 0.4); color: var(--accent-cyan); width: 38px; height: 38px;">
+                    QS
+                  </div>
+                  <div>
+                    <div id="chat-active-name" class="active-contact-name">Direct Secure Tunnel</div>
+                    <div id="chat-active-status" class="active-contact-sub">
+                      <i data-lucide="shield-check" data-size="13"></i>
+                      Select a peer to initiate secure channel
+                    </div>
+                  </div>
+                </div>
+
+                <div id="chat-crypto-indicator" class="chat-crypto-badge" title="Click for tunnel encryption details">
+                  <i data-lucide="lock" data-size="13"></i>
+                  <span>End-to-End Encrypted</span>
+                  <i data-lucide="info" data-size="12"></i>
+                </div>
+              </div>
+
+              <!-- Message History Scroll Area -->
+              <div id="chat-messages-container" class="chat-messages-scroll">
+                <!-- Populated dynamically by chat.js -->
+              </div>
+
+              <!-- Message Input Bar -->
+              <div class="chat-input-bar">
+                <button id="chat-attach-btn" class="chat-action-btn chat-attach-btn" title="Attach encrypted document" aria-label="Attachment">
+                  <i data-lucide="paperclip" data-size="18"></i>
+                </button>
+                <input type="text" id="chat-message-input" class="chat-input-field" placeholder="Type a message (Protected by ML-KEM-768 + AES-256-GCM)..." autocomplete="off">
+                <button id="chat-send-btn" class="chat-action-btn chat-send-btn" title="Send Encrypted Message" aria-label="Send">
+                  <i data-lucide="send" data-size="18"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 6. SECURITY DASHBOARD VIEW (#view-security) -->
+        <!-- ========================================================================= -->
+        <div id="view-security" class="app-sub-view">
+          <div class="security-header-banner">
+            <div>
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.35rem;">Cryptographic Pipeline & Algorithm Specifications</h2>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Post-Quantum Key-Encapsulation Mechanism (ML-KEM) and Symmetric Authenticated Encryption (AES-256-GCM).
+              </p>
+            </div>
+            <div class="security-core-status">
+              <span class="crypto-status-pill">
+                <i data-lucide="shield-check" data-size="14"></i>
+                NIST FIPS 203 Compliant
+              </span>
+              <span class="badge badge-cyan">
+                <i data-lucide="cpu" data-size="12"></i>
+                Hardware Accelerated
+              </span>
+            </div>
+          </div>
+
+          <!-- Algorithm Status Cards Grid -->
+          <div class="crypto-cards-grid">
+            <div class="crypto-spec-card">
+              <div class="crypto-spec-header">
+                <div class="crypto-title-box">
+                  <div class="crypto-icon-box" style="background: rgba(0, 217, 255, 0.1); color: var(--accent-cyan);">
+                    <i data-lucide="cpu" data-size="22"></i>
+                  </div>
+                  <div>
+                    <h3 style="font-size: 1.15rem;">ML-KEM-768 (Module-Lattice KEM)</h3>
+                    <div style="font-size: 0.76rem; color: var(--accent-teal);">NIST FIPS 203 • Category 3 Security</div>
+                  </div>
+                </div>
+                <span class="badge badge-cyan">Active</span>
+              </div>
+              <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5;">
+                Hardness grounded in the Module Learning with Errors (M-LWE) problem. Provides 192-bit quantum security margin, completely immune to Shor's polynomial-time factoring.
+              </p>
+              <table class="crypto-spec-table">
+                <tr><td>Matrix Dimension (k)</td><td>3</td></tr>
+                <tr><td>Modulus (q)</td><td>3329</td></tr>
+                <tr><td>Public Key Size</td><td>1,184 Bytes</td></tr>
+                <tr><td>Ciphertext Size</td><td>1,088 Bytes</td></tr>
+                <tr><td>Shared Secret Entropy</td><td>256 Bits (32 Bytes)</td></tr>
+                <tr><td>Decapsulation Latency</td><td>&lt; 1 ms (Sub-millisecond)</td></tr>
+              </table>
+            </div>
+
+            <div class="crypto-spec-card">
+              <div class="crypto-spec-header">
+                <div class="crypto-title-box">
+                  <div class="crypto-icon-box" style="background: rgba(0, 229, 176, 0.1); color: var(--accent-teal);">
+                    <i data-lucide="shield" data-size="22"></i>
+                  </div>
+                  <div>
+                    <h3 style="font-size: 1.15rem;">AES-256-GCM (Authenticated AEAD)</h3>
+                    <div style="font-size: 0.76rem; color: var(--accent-cyan);">NIST SP 800-38D • Authenticated Encryption</div>
+                  </div>
+                </div>
+                <span class="badge badge-teal">Active</span>
+              </div>
+              <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5;">
+                Provides stream encryption with built-in message integrity. The 128-bit GHASH authentication tag guarantees that bit flips and replay attacks are instantaneously detected and rejected.
+              </p>
+              <table class="crypto-spec-table">
+                <tr><td>Key Length</td><td>256 Bits</td></tr>
+                <tr><td>Nonce / IV Size</td><td>96 Bits (Unique per packet)</td></tr>
+                <tr><td>Authentication Tag</td><td>128-bit GHASH</td></tr>
+                <tr><td>Quantum Security Floor</td><td>128 Bits (Grover Bound)</td></tr>
+                <tr><td>Acceleration</td><td>AES-NI / ARM Crypto Hardware</td></tr>
+                <tr><td>Integrity Mode</td><td>Galois/Counter Mode AEAD</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <!-- Visual Workflow: Sender -> ML-KEM -> Shared Secret -> AES-256-GCM -> Receiver -->
+          <div class="pipeline-section">
+            <div class="pipeline-header">
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem;">Interactive Cryptographic Workflow Pipeline</h3>
+                <p style="font-size: 0.84rem; color: var(--text-secondary);">
+                  Visualizing the 6-stage post-quantum key encapsulation and authenticated payload transit.
+                </p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button id="btn-simulate-pipeline" class="btn btn-primary btn-sm">
+                  <i data-lucide="activity" data-size="16"></i>
+                  <span>Execute Handshake Verification</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Pipeline Visual Nodes -->
+            <div class="pipeline-diagram">
+              <div class="pipeline-node active" data-step="1">
+                <div class="pipeline-node-icon"><i data-lucide="user" data-size="22"></i></div>
+                <span class="pipeline-node-name">1. Sender</span>
+                <span class="pipeline-node-sub">Keypair Gen</span>
+              </div>
+              <div class="pipeline-connector"></div>
+
+              <div class="pipeline-node" data-step="2">
+                <div class="pipeline-node-icon"><i data-lucide="share-2" data-size="22"></i></div>
+                <span class="pipeline-node-name">2. Transmit</span>
+                <span class="pipeline-node-sub">Public Key</span>
+              </div>
+              <div class="pipeline-connector"></div>
+
+              <div class="pipeline-node" data-step="3">
+                <div class="pipeline-node-icon"><i data-lucide="cpu" data-size="22"></i></div>
+                <span class="pipeline-node-name">3. ML-KEM</span>
+                <span class="pipeline-node-sub">Encapsulation</span>
+              </div>
+              <div class="pipeline-connector"></div>
+
+              <div class="pipeline-node" data-step="4">
+                <div class="pipeline-node-icon"><i data-lucide="key" data-size="22"></i></div>
+                <span class="pipeline-node-name">4. Shared Secret</span>
+                <span class="pipeline-node-sub">HKDF-SHA3</span>
+              </div>
+              <div class="pipeline-connector"></div>
+
+              <div class="pipeline-node" data-step="5">
+                <div class="pipeline-node-icon"><i data-lucide="lock" data-size="22"></i></div>
+                <span class="pipeline-node-name">5. AES-256-GCM</span>
+                <span class="pipeline-node-sub">AEAD Wrap</span>
+              </div>
+              <div class="pipeline-connector"></div>
+
+              <div class="pipeline-node" data-step="6">
+                <div class="pipeline-node-icon"><i data-lucide="shield-check" data-size="22"></i></div>
+                <span class="pipeline-node-name">6. Receiver</span>
+                <span class="pipeline-node-sub">Auth Verified</span>
+              </div>
+            </div>
+
+            <!-- Active Step Inspection Card -->
+            <div class="step-detail-card">
+              <div class="step-meta-row">
+                <div class="flex items-center gap-2">
+                  <span id="step-indicator-num" class="badge badge-cyan">Step 1 of 6</span>
+                  <span id="step-detail-badge" class="badge badge-teal">ML-KEM-768 (FIPS 203)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button id="btn-step-prev" class="btn btn-secondary btn-sm" aria-label="Previous step">
+                    <i data-lucide="chevron-left" data-size="14"></i>
+                  </button>
+                  <button id="btn-step-next" class="btn btn-secondary btn-sm" aria-label="Next step">
+                    <i data-lucide="chevron-right" data-size="14"></i>
+                  </button>
+                </div>
+              </div>
+
+              <h4 id="step-detail-title" style="font-size: 1.15rem; margin-bottom: 0.5rem;">Sender: Ephemeral Key Generation</h4>
+              <p id="step-detail-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                Sender generates an ephemeral public/private keypair (pk, sk) based on hard Module Learning with Errors (M-LWE) lattice problems.
+              </p>
+
+              <div class="step-math-box">
+                <span style="color: var(--text-muted); font-size: 0.75rem; display: block; margin-bottom: 4px;">Cryptographic Formula & Primitive:</span>
+                <span id="step-detail-math">pk = (A * s + e) mod q</span>
+              </div>
+
+              <div style="font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; justify-content: space-between;">
+                <span>Parameters: <strong id="step-detail-params" class="text-white">Lattice dimension: k=3, Modulus q=3329, Public Key: 1,184 Bytes</strong></span>
+                <span class="text-cyan">Click any workflow node above to inspect its math</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Cryptographic Sandbox Widgets -->
+          <div class="security-interactive-grid">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">
+                    <i data-lucide="key" data-size="18" class="text-cyan"></i>
+                    Ephemeral Keypair Generator
+                  </h3>
+                  <div class="card-subtitle">Sample new post-quantum lattice seed via Web Crypto</div>
+                </div>
+              </div>
+              <div style="margin-bottom: 1rem;">
+                <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                  Samples physical entropy vectors over polynomial ring R_q to produce an authenticated ephemeral public key.
+                </p>
+                <div class="key-fingerprint-box">
+                  <span id="security-ephemeral-key">ML-KEM-768:4A9F:8B12:C3D4:E5F6:09AA:BBCC</span>
+                  <i data-lucide="check" data-size="16" class="text-teal"></i>
+                </div>
+              </div>
+              <button id="btn-generate-ephemeral" class="btn btn-secondary w-full">
+                <i data-lucide="key" data-size="16"></i>
+                <span>Generate Ephemeral Keypair</span>
+              </button>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">
+                    <i data-lucide="shield-alert" data-size="18" class="text-teal"></i>
+                    Integrity & Downgrade Prevention
+                  </h3>
+                  <div class="card-subtitle">Enforcing zero classical algorithmic fallbacks</div>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem;">
+                  <span style="color: var(--text-secondary);">Legacy RSA/ECC Fallback</span>
+                  <span class="badge badge-danger">Strictly Prohibited</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem;">
+                  <span style="color: var(--text-secondary);">Ciphertext Auth Tag Check</span>
+                  <span class="badge badge-teal">Enforced (GHASH-128)</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem;">
+                  <span style="color: var(--text-secondary);">Zero-Trace Memory Scrubbing</span>
+                  <span class="badge badge-cyan">Enabled</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem;">
+                  <span style="color: var(--text-secondary);">Rekey Frequency Policy</span>
+                  <span style="font-family: var(--font-mono); color: var(--text-white);">Every 15 Minutes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 7. FILE SHARING PAGE VIEW (#view-files) -->
+        <!-- ========================================================================= -->
+        <div id="view-files" class="app-sub-view">
+          <div class="files-header-row">
+            <div>
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.35rem;">Post-Quantum Encrypted File Vault</h2>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Store and share files wrapped with ML-KEM-768 session keys and AES-256-GCM AEAD encryption.
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button id="btn-browse-files" class="btn btn-primary">
+                <i data-lucide="upload-cloud" data-size="16"></i>
+                <span>Browse Files</span>
+              </button>
+              <input type="file" id="file-input-hidden" style="display: none;">
+            </div>
+          </div>
+
+          <!-- Drag and Drop Upload Dropzone -->
+          <div id="file-dropzone" class="file-dropzone">
+            <div class="dropzone-icon-box">
+              <i data-lucide="upload-cloud" data-size="32"></i>
+            </div>
+            <h3 class="dropzone-title">Drag & Drop Encrypted Files Here</h3>
+            <p class="dropzone-desc">
+              Files dropped here are automatically encrypted in-memory using an ephemeral ML-KEM-768 session key before transit.
+            </p>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('file-input-hidden').click();">
+              Or Choose Files From Computer
+            </button>
+            <div>
+              <span class="dropzone-pqc-pill">
+                <i data-lucide="shield-check" data-size="13"></i>
+                Protected by ML-KEM-768 + AES-256-GCM
+              </span>
+            </div>
+          </div>
+
+          <!-- Upload Progress Animation Card -->
+          <div id="file-upload-progress" class="upload-progress-card">
+            <div class="upload-progress-info">
+              <div class="flex items-center gap-2">
+                <i data-lucide="refresh-cw" class="animate-spin text-cyan" data-size="16"></i>
+                <span>Encapsulating session key & encrypting <strong id="uploading-file-name" class="uploading-filename">file.pdf</strong>...</span>
+              </div>
+              <span id="upload-percent-text" class="upload-percent-text">0%</span>
+            </div>
+            <div class="progress-track">
+              <div id="upload-progress-bar" class="progress-fill" style="width: 0%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-teal));"></div>
+            </div>
+          </div>
+
+          <!-- Recent Shared Files Table -->
+          <div class="file-table-card">
+            <div class="file-table-header">
+              <div>
+                <h3 class="card-title">
+                  <i data-lucide="folder" data-size="18" class="text-cyan"></i>
+                  Encrypted Shared Vault Files
+                </h3>
+                <div class="card-subtitle">Encrypted payloads protected against SNDL harvesting</div>
+              </div>
+              <span class="badge badge-teal">Active Vault</span>
+            </div>
+
+            <div class="file-table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>File Name & Integrity Hash</th>
+                    <th>Size</th>
+                    <th>Date Added</th>
+                    <th>Encryption Status</th>
+                    <th style="text-align: right;">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="files-table-body">
+                  <!-- Populated by files.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 8. SECURITY LOGS PAGE VIEW (#view-logs) -->
+        <!-- ========================================================================= -->
+        <div id="view-logs" class="app-sub-view">
+          <div class="files-header-row">
+            <div>
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.35rem;">Security Audit Trail & Telemetry</h2>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Immutable cryptographic activity logs, key rotations, and authentication events.
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button id="btn-export-logs" class="btn btn-secondary btn-sm">
+                <i data-lucide="download" data-size="14"></i>
+                <span>Export Signed Audit Bundle</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Controls Bar: Category Filters & Search -->
+          <div class="logs-controls-bar">
+            <div class="logs-filter-group">
+              <button class="log-filter-btn active" data-category="ALL">All Events</button>
+              <button class="log-filter-btn" data-category="CRYPTOGRAPHY">Cryptography</button>
+              <button class="log-filter-btn" data-category="MESSAGE">Messages</button>
+              <button class="log-filter-btn" data-category="AUTH">Authentication</button>
+              <button class="log-filter-btn" data-category="FILE">File Vault</button>
+              <button class="log-filter-btn" data-category="SECURITY">Threat Intercepts</button>
+            </div>
+
+            <div class="logs-search-box">
+              <span class="logs-search-icon"><i data-lucide="search" data-size="14"></i></span>
+              <input type="text" id="logs-search-input" class="logs-search-input" placeholder="Search event ID, actor, or hash...">
+            </div>
+          </div>
+
+          <!-- Audit Log Table -->
+          <div class="file-table-card">
+            <div class="file-table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Event ID</th>
+                    <th>Timestamp</th>
+                    <th>Cryptographic Event & Details</th>
+                    <th>Status</th>
+                    <th>Actor / IP</th>
+                    <th style="text-align: right;">Inspection</th>
+                  </tr>
+                </thead>
+                <tbody id="logs-table-body">
+                  <!-- Populated by logs.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 9. SETTINGS PAGE VIEW (#view-settings) -->
+        <!-- ========================================================================= -->
+        <div id="view-settings" class="app-sub-view">
+          <div class="files-header-row">
+            <div>
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.35rem;">System & Identity Settings</h2>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Manage your post-quantum certificates, cryptographic policies, and platform preferences.
+              </p>
+            </div>
+            <button class="btn btn-primary btn-save-settings">
+              <i data-lucide="check" data-size="16"></i>
+              <span>Save Preferences</span>
+            </button>
+          </div>
+
+          <div class="settings-container">
+            <!-- Settings Sidebar -->
+            <div class="settings-sidebar-nav">
+              <div class="settings-nav-item active" data-tab="profile">
+                <i data-lucide="user" data-size="16"></i>
+                <span>Cryptographic Profile</span>
+              </div>
+              <div class="settings-nav-item" data-tab="security">
+                <i data-lucide="shield" data-size="16"></i>
+                <span>PQC Security Policy</span>
+              </div>
+              <div class="settings-nav-item" data-tab="account">
+                <i data-lucide="lock" data-size="16"></i>
+                <span>Account & Devices</span>
+              </div>
+              <div class="settings-nav-item" data-tab="preferences">
+                <i data-lucide="sliders" data-size="16"></i>
+                <span>UI & Notifications</span>
+              </div>
+            </div>
+
+            <!-- Settings Content Panels -->
+            <div class="settings-content-pane">
+              <!-- Panel 1: Profile Information -->
+              <div class="settings-section-card active" data-section="profile">
+                <div class="settings-card-header">
+                  <h3 class="card-title">Profile & Identity Parameters</h3>
+                  <div class="card-subtitle">Public metadata associated with your quantum-safe communications</div>
+                </div>
+
+                <div class="settings-form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="settings-name">Full Display Name</label>
+                    <input type="text" id="settings-name" class="form-input" placeholder="Enter display name">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="settings-email">Email Identity</label>
+                    <input type="email" id="settings-email" class="form-input" placeholder="name@company.com">
+                  </div>
+                </div>
+
+                <div class="settings-form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="settings-role">Organization Role</label>
+                    <input type="text" id="settings-role" class="form-input" placeholder="e.g. Security Lead">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="settings-org">Enterprise Entity</label>
+                    <input type="text" id="settings-org" class="form-input" placeholder="e.g. Enterprise Security Systems">
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 1rem;">
+                  <label class="form-label">Active Post-Quantum Public Key Fingerprint (ML-KEM-768)</label>
+                  <div class="key-fingerprint-display">
+                    <span id="settings-key-fingerprint">7F4A:9C12:33E8:01B4:5D9A:F682:BC44:1102</span>
+                    <button id="btn-copy-fingerprint" class="btn btn-ghost btn-sm" title="Copy fingerprint">
+                      <i data-lucide="copy" data-size="14"></i> Copy
+                    </button>
+                  </div>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
+                  <button class="btn btn-primary btn-save-settings">Save Changes</button>
+                </div>
+              </div>
+
+              <!-- Panel 2: PQC Security Policy -->
+              <div class="settings-section-card" data-section="security">
+                <div class="settings-card-header">
+                  <h3 class="card-title">Post-Quantum Cryptographic Policies</h3>
+                  <div class="card-subtitle">Configure key exchange modes, lattice parameter sizes, and forward secrecy rules</div>
+                </div>
+
+                <div class="settings-toggle-row">
+                  <div class="settings-toggle-meta">
+                    <span class="toggle-title">Default Key Encapsulation Algorithm</span>
+                    <span class="toggle-desc">ML-KEM-768 (NIST Category 3) is recommended for optimum balance of 192-bit quantum security and sub-millisecond latency.</span>
+                  </div>
+                  <select class="form-select" style="max-width: 200px;">
+                    <option selected>ML-KEM-768 (Recommended)</option>
+                    <option>ML-KEM-1024 (Category 5 Highest)</option>
+                    <option>ML-KEM-512 (Category 1 Fast)</option>
+                  </select>
+                </div>
+
+                <div class="settings-toggle-row">
+                  <div class="settings-toggle-meta">
+                    <span class="toggle-title">Strict Ephemeral Rekeying</span>
+                    <span class="toggle-desc">Automatically force session key rotation every 15 minutes to guarantee forward secrecy.</span>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div class="settings-toggle-row">
+                  <div class="settings-toggle-meta">
+                    <span class="toggle-title">Zero-Trace Memory Scrubbing</span>
+                    <span class="toggle-desc">Overwrite polynomial lattice buffers with zeroes immediately after key decapsulation.</span>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div class="settings-toggle-row">
+                  <div class="settings-toggle-meta">
+                    <span class="toggle-title">Reject Legacy Classical Downgrade (RSA / ECDH)</span>
+                    <span class="toggle-desc">Immediately drop any inbound connection attempting to negotiate non-quantum ciphers.</span>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
+                  <button class="btn btn-primary btn-save-settings">Save Preferences</button>
+                </div>
+              </div>
+
+              <!-- Panel 3: Account & Devices -->
+              <div class="settings-section-card" data-section="account">
+                <div class="settings-card-header">
+                  <h3 class="card-title">Account Security & Verified Devices</h3>
+                  <div class="card-subtitle">Manage multi-factor tokens and hardware authentication passes</div>
+                </div>
+
+                <div class="settings-toggle-row">
+                  <div class="settings-toggle-meta">
+                    <span class="toggle-title">Quantum Hardware Token (ML-DSA Signature)</span>
+                    <span class="toggle-desc">Require physical FIDO2 post-quantum key for all dashboard logins.</span>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                  <h4 style="font-size: 0.95rem; margin-bottom: 0.75rem;">Active Hardware Terminals</h4>
+                  <div class="activity-item" style="margin-bottom: 0.75rem;">
+                    <div class="activity-icon-wrap" style="background: rgba(0, 217, 255, 0.1); color: var(--accent-cyan);">
+                      <i data-lucide="laptop" data-size="18"></i>
+                    </div>
+                    <div class="activity-content">
+                      <div class="activity-title">Apple M-Series Workstation (Current Session)</div>
+                      <div class="activity-desc">macOS • PQC Vault Daemon 2.4 • IP 10.240.12.8</div>
+                    </div>
+                    <span class="badge badge-teal">Verified</span>
+                  </div>
+
+                  <div class="activity-item">
+                    <div class="activity-icon-wrap" style="background: rgba(0, 229, 176, 0.1); color: var(--accent-teal);">
+                      <i data-lucide="smartphone" data-size="18"></i>
+                    </div>
+                    <div class="activity-content">
+                      <div class="activity-title">Secure Mobile Terminal</div>
+                      <div class="activity-desc">iOS Quantum Client • Encrypted Local Vault</div>
+                    </div>
+                    <span class="badge badge-cyan">Active</span>
+                  </div>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
+                  <button class="btn btn-primary btn-save-settings">Save Preferences</button>
+                </div>
+              </div>
+
+              <!-- Panel 4: UI & Preferences -->
+              <div class="settings-section-card" data-section="preferences">
+                <div class="settings-card-header">
+                  <h3 class="card-title">Theme & Notification Preferences</h3>
+                  <div class="card-subtitle">Customize application visual palette and security telemetry alerts</div>
+                </div>
+
+                <div>
+                  <label class="form-label">Theme Mode</label>
+                  <div class="theme-options-grid">
+                    <div class="theme-option-box active" data-theme="Deep Navy">
+                      <div class="theme-preview-dot" style="background: #00D9FF; box-shadow: 0 0 10px #00D9FF;"></div>
+                      <div style="font-size: 0.88rem; font-weight: 600;">Deep Navy</div>
+                      <div style="font-size: 0.74rem; color: var(--text-muted);">Default Cyber Theme</div>
+                    </div>
+
+                    <div class="theme-option-box" data-theme="Cyber Teal">
+                      <div class="theme-preview-dot" style="background: #00E5B0; box-shadow: 0 0 10px #00E5B0;"></div>
+                      <div style="font-size: 0.88rem; font-weight: 600;">Cyber Teal</div>
+                      <div style="font-size: 0.74rem; color: var(--text-muted);">Cryptographer Clean</div>
+                    </div>
+
+                    <div class="theme-option-box" data-theme="High Contrast">
+                      <div class="theme-preview-dot" style="background: #A78BFA; box-shadow: 0 0 10px #A78BFA;"></div>
+                      <div style="font-size: 0.88rem; font-weight: 600;">Lattice Purple</div>
+                      <div style="font-size: 0.74rem; color: var(--text-muted);">Enterprise Contrast</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                  <div class="settings-toggle-row">
+                    <div class="settings-toggle-meta">
+                      <span class="toggle-title">Real-Time Rekey Notifications</span>
+                      <span class="toggle-desc">Show subtle desktop alerts whenever an ephemeral channel rotates key material.</span>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" checked>
+                      <span class="switch-slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="settings-toggle-row">
+                    <div class="settings-toggle-meta">
+                      <span class="toggle-title">Sound Effects on Message Decapsulation</span>
+                      <span class="toggle-desc">Play crisp feedback tone when message authentication tag is verified.</span>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="switch-slider"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
+                  <button class="btn btn-primary btn-save-settings">Save Preferences</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- End app-content-body -->
+    </main>
+  </div><!-- End app-shell -->
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL DIALOGS -->
+  <!-- ========================================================================= -->
+
+  <!-- Modal 1: Cryptographic Stack Information -->
+  <div id="modal-crypto-info" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="card-title">
+          <i data-lucide="shield-check" data-size="20" class="text-cyan"></i>
+          Cryptographic Stack Architecture
+        </h3>
+        <button class="toast-close modal-close-trigger" aria-label="Close modal">
+          <i data-lucide="x" data-size="18"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="font-size: 1rem; color: var(--accent-cyan); margin-bottom: 0.35rem;">Post-Quantum Hybrid Architecture</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            QUANTUM-SAFE is designed to protect communication against future quantum adversaries armed with Shor's algorithm. Our protocol stacks:
+          </p>
+        </div>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.84rem;">
+          <li style="display: flex; gap: 0.5rem;">
+            <i data-lucide="check" data-size="16" class="text-teal" style="flex-shrink: 0; margin-top: 2px;"></i>
+            <span><strong>ML-KEM-768 (NIST FIPS 203):</strong> Ephemeral public-key encapsulation over structured module lattices (M-LWE).</span>
+          </li>
+          <li style="display: flex; gap: 0.5rem;">
+            <i data-lucide="check" data-size="16" class="text-teal" style="flex-shrink: 0; margin-top: 2px;"></i>
+            <span><strong>AES-256-GCM (NIST SP 800-38D):</strong> Symmetric authenticated encryption with 96-bit unique nonces and 128-bit GHASH authentication tags.</span>
+          </li>
+          <li style="display: flex; gap: 0.5rem;">
+            <i data-lucide="check" data-size="16" class="text-teal" style="flex-shrink: 0; margin-top: 2px;"></i>
+            <span><strong>Zero-Knowledge Rekeying:</strong> Keys exist only ephemerally in volatile memory and are purged immediately after use.</span>
+          </li>
+        </ul>
+        <div style="margin-top: 1.25rem; padding: 0.75rem 1rem; background: rgba(0, 217, 255, 0.08); border: 1px solid rgba(0, 217, 255, 0.25); border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--accent-cyan);">
+          <i data-lucide="shield-check" data-size="14"></i> <strong>Cryptographic Assurance:</strong> Endpoints enforce pure ML-KEM-768 lattice exchange with Galois/Counter Mode AEAD payload encryption.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary modal-close-trigger">Understood</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: System Security Posture -->
+  <div id="modal-system-status" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="card-title">
+          <i data-lucide="shield-check" data-size="20" class="text-teal"></i>
+          Cryptographic Posture & System Diagnostics
+        </h3>
+        <button class="toast-close modal-close-trigger" aria-label="Close modal">
+          <i data-lucide="x" data-size="18"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+          QUANTUM-SAFE is actively operating at <strong>DEFCON 1 Quantum Resilience</strong>. All incoming and outgoing data transit channels are authenticated and sealed with post-quantum lattice primitives.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.84rem; color: var(--text-secondary);">
+          <li style="display: flex; gap: 0.5rem;">
+            <i data-lucide="check" data-size="16" class="text-teal" style="flex-shrink: 0;"></i>
+            <span><strong>NIST FIPS 203:</strong> Module-Lattice Key Encapsulation (ML-KEM-768) active across all peer channels.</span>
+          </li>
+          <li style="display: flex; gap: 0.5rem;">
+            <i data-lucide="check" data-size="16" class="text-teal" style="flex-shrink: 0;"></i>
+            <span><strong>NIST SP 800-38D:</strong> AES-256-GCM authenticated payload transit with 128-bit GHASH integrity.</span>
+          </li>
+          <li style="display: flex; gap: 0.5rem;">
+            <i data-lucide="check" data-size="16" class="text-teal" style="flex-shrink: 0;"></i>
+            <span><strong>Zero Legacy Fallback:</strong> Classical RSA/ECC connection attempts are strictly dropped.</span>
+          </li>
+          <li style="display: flex; gap: 0.5rem;">
+            <i data-lucide="check" data-size="16" class="text-teal" style="flex-shrink: 0;"></i>
+            <span><strong>Forward Secrecy:</strong> Strict 15-minute key rotation with zero-trace volatile memory purge.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary modal-close-trigger">Confirm Status</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Log Inspection -->
+  <div id="modal-log-inspect" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="card-title">
+          <i data-lucide="file-text" data-size="20" class="text-cyan"></i>
+          Audit Event Telemetry Inspector
+        </h3>
+        <button class="toast-close modal-close-trigger" aria-label="Close modal">
+          <i data-lucide="x" data-size="18"></i>
+        </button>
+      </div>
+      <div id="log-inspect-modal-body" class="modal-body">
+        <!-- Injected dynamically by logs.js -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary modal-close-trigger">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Core Scripts -->
+  <script src="js/icons.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/landing.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/security.js"></script>
+  <script src="js/files.js"></script>
+  <script src="js/logs.js"></script>
+  <script src="js/settings.js"></script>
+
+  <!-- Application Bootstrap -->
+  <script>
+    function initializeQuantumSafe() {
+      // 1. Initialize Icons
+      try {
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+        }
+      } catch (e) {
+        console.warn('Lucide icon warning:', e);
+      }
+
+      // 2. Initialize Router FIRST so all navigation links respond immediately
+      try {
+        if (window.QS_ROUTER && typeof window.QS_ROUTER.init === 'function') {
+          window.QS_ROUTER.init();
+        }
+      } catch (e) {
+        console.error('Router initialization error:', e);
+      }
+
+      // 3. Initialize components with isolated fault boundaries
+      const controllers = [
+        ['APP', window.QS_APP],
+        ['LANDING', window.QS_LANDING],
+        ['AUTH', window.QS_AUTH],
+        ['DASHBOARD', window.QS_DASHBOARD],
+        ['CHAT', window.QS_CHAT],
+        ['SECURITY', window.QS_SECURITY],
+        ['FILES', window.QS_FILES],
+        ['LOGS', window.QS_LOGS],
+        ['SETTINGS', window.QS_SETTINGS]
+      ];
+
+      for (const [name, ctrl] of controllers) {
+        try {
+          if (ctrl && typeof ctrl.init === 'function') {
+            ctrl.init();
+          }
+        } catch (err) {
+          console.warn(`[${name}] initialization warning:`, err);
+        }
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeQuantumSafe);
+    } else {
+      initializeQuantumSafe();
+    }
+  </script>
+</body>
+</html>
