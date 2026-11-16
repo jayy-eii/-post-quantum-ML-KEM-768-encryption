@@ -4,6 +4,8 @@
  * and HS256 zero-dependency JWT token generation/validation.
  */
 
+try { require('dotenv').config(); } catch {}
+
 const crypto = require('node:crypto');
 
 // Server JWT Signing Secret
