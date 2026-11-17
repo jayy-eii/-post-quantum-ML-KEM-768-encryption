@@ -566,36 +566,43 @@
 
       <nav class="sidebar-nav-container">
         <span class="sidebar-section-label">Core Operations</span>
-        <a href="#/dashboard" class="nav-item active" data-route="dashboard">
+        <a href="#/dashboard" class="nav-item active" data-route="dashboard" target="_blank" rel="noopener noreferrer" title="Main Dashboard • Opens in new tab">
           <i data-lucide="activity" data-size="18"></i>
           <span>Dashboard</span>
+          <i data-lucide="external-link" data-size="13" class="nav-tab-icon"></i>
         </a>
-        <a href="#/chat" class="nav-item" data-route="chat">
+        <a href="#/chat" class="nav-item" data-route="chat" target="_blank" rel="noopener noreferrer" title="Secure Chat (PQC Direct Tunnel) • Opens in new tab">
           <i data-lucide="message-square" data-size="18"></i>
           <span>Secure Chat</span>
-          <span class="badge badge-cyan" style="font-size: 0.65rem;">PQC</span>
+          <span class="badge badge-cyan" style="font-size: 0.65rem; margin-left: auto; margin-right: 6px;">PQC</span>
+          <i data-lucide="external-link" data-size="13" class="nav-tab-icon" style="margin-left: 0;"></i>
         </a>
-        <a href="#/security" class="nav-item" data-route="security">
+        <a href="#/security" class="nav-item" data-route="security" target="_blank" rel="noopener noreferrer" title="Security Engine & Cryptographic Specs • Opens in new tab">
           <i data-lucide="cpu" data-size="18"></i>
           <span>Security Engine</span>
+          <i data-lucide="external-link" data-size="13" class="nav-tab-icon"></i>
         </a>
-        <a href="#/files" class="nav-item" data-route="files">
+        <a href="#/files" class="nav-item" data-route="files" target="_blank" rel="noopener noreferrer" title="Encrypted File Vault • Opens in new tab">
           <i data-lucide="folder" data-size="18"></i>
           <span>File Vault</span>
+          <i data-lucide="external-link" data-size="13" class="nav-tab-icon"></i>
         </a>
-        <a href="#/logs" class="nav-item" data-route="logs">
+        <a href="#/logs" class="nav-item" data-route="logs" target="_blank" rel="noopener noreferrer" title="Audit Logs & Tamper-Evident Trail • Opens in new tab">
           <i data-lucide="file-text" data-size="18"></i>
           <span>Audit Logs</span>
+          <i data-lucide="external-link" data-size="13" class="nav-tab-icon"></i>
         </a>
 
         <span class="sidebar-section-label" style="margin-top: 1rem;">Identity & Policy</span>
-        <a href="#/settings" class="nav-item" data-route="settings">
+        <a href="#/settings" class="nav-item" data-route="settings" target="_blank" rel="noopener noreferrer" title="System Settings & Keypair • Opens in new tab">
           <i data-lucide="settings" data-size="18"></i>
           <span>Settings</span>
+          <i data-lucide="external-link" data-size="13" class="nav-tab-icon"></i>
         </a>
-        <a href="#/landing" class="nav-item" style="color: var(--text-muted);">
-          <i data-lucide="external-link" data-size="18"></i>
+        <a href="#/landing" class="nav-item" data-route="landing" target="_blank" rel="noopener noreferrer" title="Public Portal & Threat Intelligence • Opens in new tab" style="color: var(--text-muted);">
+          <i data-lucide="globe" data-size="18"></i>
           <span>Public Portal</span>
+          <i data-lucide="external-link" data-size="13" class="nav-tab-icon"></i>
         </a>
       </nav>
 
@@ -688,6 +695,46 @@
                 <i data-lucide="shield-check" data-size="13"></i>
                 <span>Security Posture</span>
               </button>
+            </div>
+          </div>
+
+          <!-- Section Information Guide -->
+          <div class="section-info-card">
+            <div class="section-info-header">
+              <div class="section-info-title-wrap">
+                <div class="section-info-icon-box">
+                  <i data-lucide="activity" data-size="22"></i>
+                </div>
+                <div>
+                  <h3 class="section-info-title">
+                    <span>Main Operations Dashboard</span>
+                    <span class="badge badge-teal" style="font-size: 0.65rem;">Active Telemetry</span>
+                  </h3>
+                  <div class="section-info-subtitle">Real-time centralized telemetry for post-quantum cryptographic channels, message transit rates, and system posture.</div>
+                </div>
+              </div>
+              <div class="section-info-pills">
+                <span class="crypto-status-pill"><i data-lucide="shield-check" data-size="13"></i> NIST FIPS 203 ML-KEM-768</span>
+                <span class="crypto-status-pill"><i data-lucide="lock" data-size="13"></i> AES-256-GCM AEAD</span>
+              </div>
+            </div>
+            <div class="section-info-grid">
+              <div class="section-info-item">
+                <span class="section-info-item-label">Primary Purpose</span>
+                <span class="section-info-item-value">Real-time monitoring of message volume, active session channels, and quantum resistance posture.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Quantum Security</span>
+                <span class="section-info-item-value">Category 3 security margin (192-bit quantum hardness) impervious to Shor's and Grover's algorithms.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Handshake Speed</span>
+                <span class="section-info-item-value">Sub-millisecond (&lt; 1 ms) key encapsulation and decapsulation over module lattices (k=3, q=3329).</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Database Persistence</span>
+                <span class="section-info-item-value">Real-time synchronization with cloud MongoDB Atlas cluster with zero plaintext leaks.</span>
+              </div>
             </div>
           </div>
 
@@ -845,6 +892,46 @@
         <!-- 5. SECURE CHAT PAGE VIEW (#view-chat) -->
         <!-- ========================================================================= -->
         <div id="view-chat" class="app-sub-view">
+          <!-- Section Information Guide -->
+          <div class="section-info-card" style="margin-bottom: 1.25rem;">
+            <div class="section-info-header">
+              <div class="section-info-title-wrap">
+                <div class="section-info-icon-box" style="background: rgba(0, 229, 176, 0.12); color: var(--accent-teal); border-color: rgba(0, 229, 176, 0.3);">
+                  <i data-lucide="message-square" data-size="22"></i>
+                </div>
+                <div>
+                  <h3 class="section-info-title">
+                    <span>1-to-1 Post-Quantum Secure Chat</span>
+                    <span class="badge badge-cyan" style="font-size: 0.65rem;">ML-KEM-768 Enforced</span>
+                  </h3>
+                  <div class="section-info-subtitle">End-to-end encrypted direct messaging tunnel with perfect forward secrecy and WebSocket push.</div>
+                </div>
+              </div>
+              <div class="section-info-pills">
+                <span class="crypto-status-pill"><i data-lucide="zap" data-size="13"></i> WebSocket Real-Time Push</span>
+                <span class="crypto-status-pill"><i data-lucide="check-check" data-size="13"></i> 128-bit GHASH Tag Verified</span>
+              </div>
+            </div>
+            <div class="section-info-grid">
+              <div class="section-info-item">
+                <span class="section-info-item-label">Key Exchange</span>
+                <span class="section-info-item-value">Encapsulates a fresh 256-bit AES key per transmission using recipient's 1,184-byte ML-KEM-768 public key.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Message Confidentiality</span>
+                <span class="section-info-item-value">Protected by AES-256-GCM authenticated cipher. MongoDB stores only random ciphertext and auth tags.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Forward Secrecy</span>
+                <span class="section-info-item-value">Immune to "Harvest Now, Decrypt Later" quantum attacks powered by Shor's factoring algorithm.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Instant Peer Sync</span>
+                <span class="section-info-item-value">When friends sign up, their quantum identity appears automatically in your channels list via WebSockets.</span>
+              </div>
+            </div>
+          </div>
+
           <div class="chat-layout-container">
             <!-- Left Contacts Sidebar -->
             <div class="chat-contacts-pane">
@@ -932,22 +1019,43 @@
         <!-- 6. SECURITY DASHBOARD VIEW (#view-security) -->
         <!-- ========================================================================= -->
         <div id="view-security" class="app-sub-view">
-          <div class="security-header-banner">
-            <div>
-              <h2 style="font-size: 1.5rem; margin-bottom: 0.35rem;">Cryptographic Pipeline & Algorithm Specifications</h2>
-              <p style="font-size: 0.85rem; color: var(--text-secondary);">
-                Post-Quantum Key-Encapsulation Mechanism (ML-KEM) and Symmetric Authenticated Encryption (AES-256-GCM).
-              </p>
+          <!-- Section Information Guide -->
+          <div class="section-info-card">
+            <div class="section-info-header">
+              <div class="section-info-title-wrap">
+                <div class="section-info-icon-box" style="background: rgba(167, 139, 250, 0.12); color: var(--accent-purple); border-color: rgba(167, 139, 250, 0.3);">
+                  <i data-lucide="cpu" data-size="22"></i>
+                </div>
+                <div>
+                  <h3 class="section-info-title">
+                    <span>Cryptographic Security Engine</span>
+                    <span class="badge badge-purple" style="font-size: 0.65rem;">FIPS 203 Pipeline</span>
+                  </h3>
+                  <div class="section-info-subtitle">Cryptographic parameter verification, Module Learning with Errors (M-LWE) lattice specs, and benchmarks.</div>
+                </div>
+              </div>
+              <div class="section-info-pills">
+                <span class="crypto-status-pill"><i data-lucide="shield-check" data-size="13"></i> NIST FIPS 203 ML-KEM-768</span>
+                <span class="crypto-status-pill"><i data-lucide="cpu" data-size="13"></i> Sub-Millisecond Latency</span>
+              </div>
             </div>
-            <div class="security-core-status">
-              <span class="crypto-status-pill">
-                <i data-lucide="shield-check" data-size="14"></i>
-                NIST FIPS 203 Compliant
-              </span>
-              <span class="badge badge-cyan">
-                <i data-lucide="cpu" data-size="12"></i>
-                Hardware Accelerated
-              </span>
+            <div class="section-info-grid">
+              <div class="section-info-item">
+                <span class="section-info-item-label">Module Lattices</span>
+                <span class="section-info-item-value">Matrix dimension k=3, Ring Modulus q=3329. Built on Module Learning with Errors (M-LWE) hardness.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Key Dimensions</span>
+                <span class="section-info-item-value">Public Key: 1,184 Bytes • Ciphertext: 1,088 Bytes • Secret Key: 2,400 Bytes • Shared Secret: 32 Bytes.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Symmetric Cipher</span>
+                <span class="section-info-item-value">AES-256-GCM authenticated encryption conforming to NIST SP 800-38D with 128-bit GHASH integrity tags.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Live Benchmark</span>
+                <span class="section-info-item-value">Run the 6-stage verification benchmark below to test real-time encapsulation and decapsulation speeds.</span>
+              </div>
             </div>
           </div>
 
@@ -1165,6 +1273,46 @@
         <!-- 7. FILE SHARING PAGE VIEW (#view-files) -->
         <!-- ========================================================================= -->
         <div id="view-files" class="app-sub-view">
+          <!-- Section Information Guide -->
+          <div class="section-info-card">
+            <div class="section-info-header">
+              <div class="section-info-title-wrap">
+                <div class="section-info-icon-box" style="background: rgba(0, 217, 255, 0.12); color: var(--accent-cyan); border-color: rgba(0, 217, 255, 0.3);">
+                  <i data-lucide="folder" data-size="22"></i>
+                </div>
+                <div>
+                  <h3 class="section-info-title">
+                    <span>Quantum-Safe Encrypted File Vault</span>
+                    <span class="badge badge-cyan" style="font-size: 0.65rem;">Authenticated Storage</span>
+                  </h3>
+                  <div class="section-info-subtitle">Client-side document encryption with ML-KEM-768 envelope key encapsulation and SHA-256 integrity verification.</div>
+                </div>
+              </div>
+              <div class="section-info-pills">
+                <span class="crypto-status-pill"><i data-lucide="lock" data-size="13"></i> Ephemeral Envelope KEM</span>
+                <span class="crypto-status-pill"><i data-lucide="database" data-size="13"></i> MongoDB Atlas Vault</span>
+              </div>
+            </div>
+            <div class="section-info-grid">
+              <div class="section-info-item">
+                <span class="section-info-item-label">Envelope Encryption</span>
+                <span class="section-info-item-value">Every uploaded file is encrypted with a unique 256-bit AES key encapsulated in an ML-KEM-768 ciphertext.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Zero Knowledge</span>
+                <span class="section-info-item-value">The database never sees plain file contents. Files remain in encrypted blob state until authenticated download.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Integrity Tag</span>
+                <span class="section-info-item-value">Includes 128-bit GHASH authentication tags and SHA-256 hashes to guarantee files are never tampered with.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Secure Download</span>
+                <span class="section-info-item-value">Decryption occurs dynamically on download with full cryptographic verification before delivery.</span>
+              </div>
+            </div>
+          </div>
+
           <div class="files-header-row">
             <div>
               <h2 style="font-size: 1.5rem; margin-bottom: 0.35rem;">Post-Quantum Encrypted File Vault</h2>
@@ -1252,6 +1400,46 @@
         <!-- 8. SECURITY LOGS PAGE VIEW (#view-logs) -->
         <!-- ========================================================================= -->
         <div id="view-logs" class="app-sub-view">
+          <!-- Section Information Guide -->
+          <div class="section-info-card">
+            <div class="section-info-header">
+              <div class="section-info-title-wrap">
+                <div class="section-info-icon-box" style="background: rgba(0, 229, 176, 0.12); color: var(--accent-teal); border-color: rgba(0, 229, 176, 0.3);">
+                  <i data-lucide="file-text" data-size="22"></i>
+                </div>
+                <div>
+                  <h3 class="section-info-title">
+                    <span>Tamper-Evident Security Audit Logs</span>
+                    <span class="badge badge-teal" style="font-size: 0.65rem;">Immutable Ledger</span>
+                  </h3>
+                  <div class="section-info-subtitle">Cryptographic audit trail recording all authentication challenges, key agreements, and system telemetry events.</div>
+                </div>
+              </div>
+              <div class="section-info-pills">
+                <span class="crypto-status-pill"><i data-lucide="shield-check" data-size="13"></i> Microsecond Timestamping</span>
+                <span class="crypto-status-pill"><i data-lucide="eye" data-size="13"></i> Forensic Attribution</span>
+              </div>
+            </div>
+            <div class="section-info-grid">
+              <div class="section-info-item">
+                <span class="section-info-item-label">Tracked Events</span>
+                <span class="section-info-item-value">Logs user registrations, password verifications, ML-KEM handshakes, messages, and file access events.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Attribution & IP</span>
+                <span class="section-info-item-value">Every entry records the actor username, client IP address, event category, and cryptographic verification status.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Audit Compliance</span>
+                <span class="section-info-item-value">Structured for enterprise security compliance, forensic post-incident analysis, and non-repudiation.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Live Sync</span>
+                <span class="section-info-item-value">Synchronized in real time with MongoDB Atlas collection <code>auditlogs</code> for persistent records.</span>
+              </div>
+            </div>
+          </div>
+
           <div class="files-header-row">
             <div>
               <h2 style="font-size: 1.5rem; margin-bottom: 0.35rem;">Security Audit Trail & Telemetry</h2>
@@ -1311,6 +1499,46 @@
         <!-- 9. SETTINGS PAGE VIEW (#view-settings) -->
         <!-- ========================================================================= -->
         <div id="view-settings" class="app-sub-view">
+          <!-- Section Information Guide -->
+          <div class="section-info-card">
+            <div class="section-info-header">
+              <div class="section-info-title-wrap">
+                <div class="section-info-icon-box" style="background: rgba(0, 217, 255, 0.12); color: var(--accent-cyan); border-color: rgba(0, 217, 255, 0.3);">
+                  <i data-lucide="shield" data-size="22"></i>
+                </div>
+                <div>
+                  <h3 class="section-info-title">
+                    <span>Identity, Keypair & Security Policies</span>
+                    <span class="badge badge-cyan" style="font-size: 0.65rem;">PQC Identity</span>
+                  </h3>
+                  <div class="section-info-subtitle">View and manage your post-quantum lattice public key, fingerprint, and cryptographic security parameters.</div>
+                </div>
+              </div>
+              <div class="section-info-pills">
+                <span class="crypto-status-pill"><i data-lucide="key" data-size="13"></i> Salted Scrypt KDF</span>
+                <span class="crypto-status-pill"><i data-lucide="lock" data-size="13"></i> 256-bit Key Protection</span>
+              </div>
+            </div>
+            <div class="section-info-grid">
+              <div class="section-info-item">
+                <span class="section-info-item-label">Your PQC Identity</span>
+                <span class="section-info-item-value">Your identity is bound to a unique 1,184-byte ML-KEM-768 public key stored in MongoDB Atlas.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Private Key Security</span>
+                <span class="section-info-item-value">Private keys are never exposed in plaintext; they are protected with salted Scrypt KDF + AES-GCM envelopes.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Public Fingerprint</span>
+                <span class="section-info-item-value">Shared with peers to authenticate your identity and verify direct 1-to-1 quantum tunnels without MitM.</span>
+              </div>
+              <div class="section-info-item">
+                <span class="section-info-item-label">Session Policy</span>
+                <span class="section-info-item-value">Enforces 15-minute re-keying intervals and auto-termination on logout with secure memory scrubbing.</span>
+              </div>
+            </div>
+          </div>
+
           <div class="files-header-row">
             <div>
               <h2 style="font-size: 1.5rem; margin-bottom: 0.35rem;">System & Identity Settings</h2>
