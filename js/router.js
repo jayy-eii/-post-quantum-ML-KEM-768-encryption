@@ -12,7 +12,7 @@ window.QS_ROUTER = {
     'register': { title: 'Create Account | QUANTUM-SAFE', isApp: false },
     'dashboard': { title: 'Security Dashboard | QUANTUM-SAFE', isApp: true, pageTitle: 'Main Dashboard', breadcrumb: 'Overview' },
     'chat': { title: 'Secure Chat | QUANTUM-SAFE', isApp: true, pageTitle: 'Secure Messaging', breadcrumb: 'End-to-End PQC Tunnels' },
-    'security': { title: 'Cryptographic Core | QUANTUM-SAFE', isApp: true, pageTitle: 'Security Engine', breadcrumb: 'ML-KEM & AES-256-GCM Pipeline' },
+    'security': { title: 'Cryptographic Core | QUANTUM-SAFE', isApp: false, pageTitle: 'Security Engine', breadcrumb: 'ML-KEM & AES-256-GCM Pipeline' },
     'files': { title: 'Encrypted File Sharing | QUANTUM-SAFE', isApp: true, pageTitle: 'File Vault', breadcrumb: 'Quantum-Encrypted Payloads' },
     'logs': { title: 'Security Audit Logs | QUANTUM-SAFE', isApp: true, pageTitle: 'Audit Trail', breadcrumb: 'Tamper-Evident Security Events' },
     'settings': { title: 'System Settings | QUANTUM-SAFE', isApp: true, pageTitle: 'Settings & Identity', breadcrumb: 'PQC Parameters & Profile' }
@@ -23,20 +23,31 @@ window.QS_ROUTER = {
 
     // Intercept all hash-based navigation links for instant, reliable transitions
     document.addEventListener('click', (e) => {
-      const link = e.target.closest('a[href^="#/"]');
+      const link = e.target.closest('a[href*="#/"]');
       if (link) {
-        // If the link is marked target="_blank" or clicked with cmd/ctrl, open in new tab with full route
+        const href = link.getAttribute('href');
+        const targetRoute = href.replace(/^.*#\/?/, '').split('?')[0].toLowerCase();
+
+        // If the link has target="_blank"
         if (link.getAttribute('target') === '_blank' || e.metaKey || e.ctrlKey) {
           e.preventDefault();
-          const href = link.getAttribute('href');
-          const targetRoute = href.replace(/^#\/?/, '').split('?')[0].toLowerCase();
           const fullUrl = `${window.location.origin}${window.location.pathname}#/${targetRoute}`;
-          window.open(fullUrl, '_blank', 'noopener,noreferrer');
+
+          // 1. Immediately switch the view in current window so user ALWAYS sees the section!
+          if (this.routes[targetRoute]) {
+            this.navigate(targetRoute);
+          }
+
+          // 2. Also open in new browser tab
+          try {
+            const newTab = window.open(fullUrl, '_blank');
+            if (newTab) newTab.focus();
+          } catch (err) {
+            console.warn('Pop-up prevented by browser:', err);
+          }
           return;
         }
 
-        const href = link.getAttribute('href');
-        const targetRoute = href.replace(/^#\/?/, '').split('?')[0].toLowerCase();
         if (targetRoute && this.routes[targetRoute]) {
           e.preventDefault();
           this.navigate(targetRoute);
